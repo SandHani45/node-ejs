@@ -1,0 +1,97 @@
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>GURI JI VISION</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">GURI JI VISION</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!--/.col (left) -->
+          <!-- right column -->
+          <div class="col-md-10">
+            <!-- general form elements disabled -->
+            <div class="card card-warning">
+              <div class="card-header">
+                <h3 class="card-title">Create a guru ji vision vontainer</h3>
+              </div>
+              <!-- /.card-header -->
+              <% if (guruji) { %>
+                <h2><%= guruji.title %></h2>
+             
+              <div class="card-body">
+                <form role="form" name="form-create-gurini-vision" method="POST" action="/admin-guru-ji-vision/edit/<%= guruji._id %>" >
+                  <div class="row">
+                    <div class="col-sm-10">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="form-control" name ="title" value="<%= guruji.title %>" placeholder="Enter ..."  required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-10">
+                      <!-- textarea -->
+                      <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control" rows="3" name="description" placeholder="Enter Description" required><%= guruji.description %></textarea >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+
+                    <div class="col-sm-10">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>Youtube link or Image </label>
+                        <input type="text" class="form-control" name="youtube_link" value="<%= guruji.youtube_link %>" placeholder="Youtube Link Embed">
+                      </div>
+                    </div>
+                    <div class="col-sm-10">
+                      <!-- textarea -->
+                      <div class="form-group">
+                        <label for="customFile" style="width: 100%;
+                        display: flex;
+                        justify-content: center;">OR</label>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" name="image" id="customFile">
+                          <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <button type="submit"  value="guriji-vision" class="btn btn-primary">Submit</button>
+                  </div>
+                </form>
+              </div>
+              <% } %>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        
+            <!-- /.card -->
+          </div>
+          <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>

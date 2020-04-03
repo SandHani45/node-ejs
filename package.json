@@ -1,0 +1,29 @@
+{
+  "name": "osgans",
+  "version": "1.0.0",
+  "description": "Osgan & Osgan  Peace Foundation",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "server": "nodemon app"
+  },
+  "author": "@sandhani shaik",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.17.0",
+    "express-validator": "^6.4.0",
+    "mongoose": "^5.9.6",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.2",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  }
+}
