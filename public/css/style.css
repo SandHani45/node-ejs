@@ -963,7 +963,8 @@ h1, h2, h3, h4, h5,
   padding: 30px;
   border: 1px solid #e9ecef; }
   .block-team-member-1 figure img {
-    width: 130px; }
+    width: 120px;
+    border-radius: 47px; }
 
 .section-title {
   font-size: 4rem !important; }
