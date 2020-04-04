@@ -3,14 +3,12 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const path = require('path');
-const serverless = require("serverless-http");
 const { check, validationResult } = require('express-validator');
 const expressLayouts = require('express-ejs-layouts')
 const flash = require('connect-flash');
 const session = require('express-session');
 const fs = require("fs");
 const app = express();
-
 // Mango config
 const db = require("./config/keys").mongoURI;
 // MangoDB Connet
@@ -71,7 +69,6 @@ app.use(function (req, res, next) {
   res.locals.messages = require('express-messages')(req, res);
   next();
 });
-module.exports = app;
-module.exports.handler = serverless(app);
-// const port = process.env.PORT || 3000;
-// app.listen(port, () => console.log(`server ruinnding ${port}`));
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`server ruinnding ${port}`));
