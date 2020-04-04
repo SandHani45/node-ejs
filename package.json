@@ -4,9 +4,9 @@
   "description": "Osgan & Osgan  Peace Foundation",
   "main": "app.js",
   "scripts": {
-    "start": "NODE_ENV=development ./node_modules/.bin/netlify-lambda serve",
+    "start": "NODE_ENV=development ./node_modules/.bin/netlify-lambda serve app",
     "server": "nodemon app",
-    "build": "NODE_ENV=production ./node_modules/.bin/netlify-lambda build"
+    "build": "NODE_ENV=production ./node_modules/.bin/netlify-lambda build app"
   },
   "author": "@sandhani shaik",
   "license": "ISC",
