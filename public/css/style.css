@@ -1117,3 +1117,15 @@ a:not([href]):not([tabindex]) {
 p{
   font-size: 18px!important;
 }
+.owl-prev{
+  font-size: 45px;
+  position: absolute;
+  left: 0;
+  color: white;
+}
+.owl-next{
+  font-size: 45px;
+  position: absolute;
+  right: 0;
+  color: white;
+}
