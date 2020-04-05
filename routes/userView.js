@@ -10,8 +10,8 @@ router.get('/', function(req, res) {
 });
 
 //what-are-we
-router.get('/what-are-we', function(req, res) {
-  res.render('pages/what-are-we',{layout:'layoutUser'});
+router.get('/who-are-we', function(req, res) {
+  res.render('pages/who-are-we',{layout:'layoutUser'});
 });
 
 // what-is-on-our-cross-wire
@@ -23,9 +23,18 @@ router.get('/forth-coming-events', function(req, res) {
   res.render('pages/forth-coming-events',{layout:'layoutUser'});
 });
 
-// gallery
-router.get('/gallery', function(req, res) {
-  res.render('pages/gallery', {layout:'layoutUser'});
+// Photo-gallery
+router.get('/photo-gallery', function(req, res) {
+  res.render('pages/photo-gallery', {layout:'layoutUser'});
+});
+// Video- gallery
+router.get('/video-gallery', function(req, res) {
+  res.render('pages/video-gallery', {layout:'layoutUser'});
+});
+
+// Video- gallery
+router.get('/audio-gallery', function(req, res) {
+  res.render('pages/audio-gallery', {layout:'layoutUser'});
 });
 
 // our-inspirations
@@ -34,7 +43,7 @@ router.get('/our-inspirations', function(req, res) {
 });
 
 // join-us
-router.get('/participate', function(req, res) {
+router.get('/join-us', function(req, res) {
   res.render('pages/join-us',{layout:'layoutUser'});
 });
 
