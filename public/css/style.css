@@ -1129,3 +1129,7 @@ p{
   right: 0;
   color: white;
 }
+.owl-nav{
+  position: relative;
+  bottom: 1048px;
+}
