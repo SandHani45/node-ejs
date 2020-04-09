@@ -1137,11 +1137,6 @@ p{
   width: 100%;
   margin-top: -71px;
 }
-body{
-  margin: 0;
-  padding: 0;
-  background-color: #000;
-}
 .arrow{
   position: absolute;
   left: 50%;
@@ -1186,7 +1181,13 @@ body{
 }
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
-  .arrow{
-    display: none;
-  }
+
+  .container_video {
+    width: 100%;
+    margin-top:0;
+    /* height: 211px; */
+}
+}
+.show-data{
+  margin-top: -13px;
 }
