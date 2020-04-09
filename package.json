@@ -1,7 +1,7 @@
 {
   "name": "osgans",
   "version": "1.0.0",
-  "description": "Osgan & Osgan  Peace Foundation",
+  "description": "Osgans & Osgans  Peace Foundation",
   "main": "app.js",
   "scripts": {
     "start": "node app",
