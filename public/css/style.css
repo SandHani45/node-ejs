@@ -1230,6 +1230,10 @@ p{
     padding-top: 3rem;
     padding-bottom: 1rem;
 }
+.owl-nav {
+  position: relative;
+  bottom: 917px;
+}
   .container_video {
     width: 100%;
     margin-top:0;
