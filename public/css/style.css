@@ -1226,11 +1226,23 @@ p{
 .width50{
   width: 50%;
 }
+.click-here{
+  position: absolute;
+  left: 48.7%;
+  top: 81%;
+  font-size: 9px;
+}
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   .site-navbar {
     padding-top: 3rem;
     padding-bottom: 1rem;
+}
+.click-here {
+  position: absolute;
+  left: 40.7%;
+  top: 336%;
+  font-size: 19px;
 }
 .owl-prev {
   font-size: 24px;
@@ -1345,7 +1357,7 @@ p{
 #section-arrow {
   position: relative;
   width: 100%;
-  height: 78px;
+  height: 89px;
   background: #212529;
   z-index: 999;
   margin-top: -11px;
