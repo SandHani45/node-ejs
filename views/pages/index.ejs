@@ -5,11 +5,14 @@
       <video autoplay muted loop class="container_video" >
           <source src="images/osgans.m4v" type="video/mp4">
       </video>
-      <div class="arrow" id="arrow">
+      <!-- <div class="arrow" id="arrow">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </div> -->
+      <section id="section-arrow" class="demo" style="background-image: url('images/video-copy.png');">
+        <a id="arrow" href="#mission" style="visibility: hidden"><span class="demo"></span></a>
+      </section>
     </div>
   <div class="show-data">
     <div class="site-section bg-image overlay counter" style="background-image: url('images/aim.jfif');" >
@@ -74,8 +77,14 @@ $('#arrow').click(function() {
     $('.show-data').css({
         'display': 'block'
     });
-    document.location.href = "#mission";
+    $('#section-arrow').css({
+        'display': 'none'
+    });
 });
+function showIt() {
+  document.getElementById("arrow").style.visibility = "visible";
+}
+setTimeout("showIt()", 6000);
 </script>
 <style>
   .sticky-wrapper{
@@ -84,6 +93,7 @@ $('#arrow').click(function() {
   .show-data{
     display: none;
   }
+  
 </style>                              
 <%- contentFor('title') %>
 Home
