@@ -1,20 +1,14 @@
    
 
     <%- include('./../partials/userCss'); -%>
-    <div class="container_video">
-      <video autoplay muted loop class="container_video" >
-          <source src="images/osgans.m4v" type="video/mp4">
-      </video>
-      <section id="section-arrow" class="demo" >
-        <a id="arrow" href="#mission" style="visibility: hidden"> <span class="demo"></span><h5 class="click-here">Click Here</h5></a>
-       
-      </section>
+    <div class="owl-carousel slide-one-item">
+      <a href="#"><img src="images/hero_1.jpg" alt="Image" class="img-fluid"></a>
+      <a href="#"><img src="images/hero_2.jpg" alt="Image" class="img-fluid"></a>
     </div>
-  <div class="show-data">
     <div class="site-section bg-image overlay counter" style="background-image: url('images/aim.jfif');" >
         <div class="container  " id="mission">
-          <div class="row mb-5 mt-10">
-            <div class="col-lg-6 mb-4">
+          <div class="row mb-5 ">
+            <div class="col-lg-6 ">
               <figure class="block-img-video-1" data-aos="fade">
                   
                   <img src="images/aim.jfif" alt="Image" class="img-fluid">
@@ -47,8 +41,8 @@
         </div>
         <div class="site-section bg-image overlay counter" style="background-image: url('images/misson.jfif');" >
           <div class="container  " id="mission">
-            <div class="row mb-5 mt-10">
-              <div class="col-lg-6 mb-4">
+            <div class="row mb-5 ">
+              <div class="col-lg-6 ">
                 <figure class="block-img-video-1" data-aos="fade">
                     <img src="images/misson.jfif" alt="Image" class="img-fluid">
                 </figure>
@@ -63,34 +57,6 @@
          
           </div>
         </div> 
-  </div>  
-                          
-<script>
-$('#arrow').click(function() {
-    $('.sticky-wrapper').css({
-        'display': 'block'
-    });
-    $('.show-data').css({
-        'display': 'block'
-    });
-    $('#section-arrow').css({
-        'display': 'none'
-    });
-});
-function showIt() {
-  document.getElementById("arrow").style.visibility = "visible";
-}
-setTimeout("showIt()", 9000);
-</script>
-<style>
-  .sticky-wrapper{
-    display: none;
-  }
-  .show-data{
-    display: none;
-  }
-
-</style>                              
 <%- contentFor('title') %>
 Home
 

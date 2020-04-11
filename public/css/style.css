@@ -1074,7 +1074,7 @@ h1, h2, h3, h4, h5,
     color: #fff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
 .logo{
-  width: 70px;
+  width: 106px;
 }
 .atag{
   color: #fd5f00!important;
@@ -1325,4 +1325,31 @@ p{
   position: relative;
   width: 100%;
 
+}
+.mg-nagitive{
+  margin-top: -61px;
+
+}
+.logo-title{
+  position: relative;
+  font-size: 31px;
+  font-weight: 500;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  margin-left: 250px;
+  margin-bottom: 50px;
+}
+.font-logo{
+    font-size: 54px;
+}
+
+.text-block-image {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
 }
