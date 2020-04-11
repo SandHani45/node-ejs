@@ -1121,13 +1121,13 @@ p{
   font-size: 45px;
   position: absolute;
   left: 0;
-  color: white;
+  color: #000;
 }
 .owl-next{
   font-size: 45px;
   position: absolute;
   right: 0;
-  color: white;
+  color: #000;
 }
 .owl-nav{
   position: relative;
