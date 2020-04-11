@@ -1217,6 +1217,17 @@ p{
   margin-top: 0px;
 }
 @media only screen and (max-width: 768px) {
+  .logo-title {
+    position: relative;
+    width: unset;
+    justify-content: unset;
+    align-items: unset;
+    margin-left: unset;
+    margin-bottom: unset;
+}
+  .font-logo{
+    font-size: 19px;
+}
   /* For mobile phones: */
   .site-navbar {
     padding-top: 3rem;
