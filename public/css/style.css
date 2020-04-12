@@ -1086,7 +1086,7 @@ h1, h2, h3, h4, h5,
     color: #fff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
 .logo{
-  width: 106px;
+  width: 130px;
 }
 .atag{
   color: #fd5f00!important;
@@ -1233,6 +1233,10 @@ p{
     margin-left: 0!important;
     margin-bottom: 0!important;
 }
+.galley-header{
+  margin-top: 10px;
+  font-size: 12px!important;
+}
   .font-logo{
     font-size: 19px;
   }
@@ -1357,4 +1361,8 @@ p{
 .logo-title{
   margin-left: 250px;
   margin-bottom: 50px;
+}
+.galley-header{
+  margin-top: 10px;
+  font-size: 1.5rem;
 }
