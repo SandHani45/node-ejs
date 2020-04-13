@@ -1372,3 +1372,8 @@ p{
 .green-bg{
   background-color: #8bc34a!important;
 }
+@media (min-width: 992px){
+  .container-adjust {
+    max-width: 1140px;
+}
+}
