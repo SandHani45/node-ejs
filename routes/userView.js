@@ -59,6 +59,42 @@ router.get('/contact-us', function(req, res) {
   res.render('pages/contact-us',{layout:'layoutUser'});
 });
 
+router.get('/john-ruskin', function(req, res) {
+  res.render('pages/john-ruskin',{layout:'layoutUser'});
+});
+
+router.get('/leo-story', function(req, res) {
+  res.render('pages/leo-story',{layout:'layoutUser'});
+});
+
+router.get('/martin', function(req, res) {
+  res.render('pages/martin',{layout:'layoutUser'});
+});
+
+router.get('/mother-teresa', function(req, res) {
+  res.render('pages/mother-teresa',{layout:'layoutUser'});
+});
+router.get('/nelson', function(req, res) {
+  res.render('pages/nelson',{layout:'layoutUser'});
+});
+//Join Us
+router.get('/donate', function(req, res) {
+  res.render('pages/donate',{layout:'layoutUser'});
+});
+
+router.get('/brand-ambassador', function(req, res) {
+  res.render('pages/brand-ambassador',{layout:'layoutUser'});
+});
+
+router.get('/become-a-member', function(req, res) {
+  res.render('pages/become-a-member',{layout:'layoutUser'});
+});
+
+router.get('/valunteers', function(req, res) {
+  res.render('pages/valunteers',{layout:'layoutUser'});
+});
+
+
 const transport = nodemailer.createTransport({
   host: 'smtp.ethereal.email',
   port: 587,

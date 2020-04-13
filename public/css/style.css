@@ -1366,3 +1366,9 @@ p{
   margin-top: 10px;
   font-size: 1.5rem;
 }
+.red-bg{
+  background-color: #f23a2e!important;
+}
+.green-bg{
+  background-color: #8bc34a!important;
+}
