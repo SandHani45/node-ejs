@@ -4,11 +4,12 @@
   .font-logo{
     font-size: 54px;
 }
-
+.mb-20{
+  margin-bottom: 120px;
+}
 .text-block-image {
   position: absolute;
-  bottom: 0;
-  right: 20px;
+  /* right: 17px; */
   background-color: black;
   color: white;
   padding-left: 20px;
@@ -1232,6 +1233,10 @@ p{
   .logo-title {
     margin-left: 0!important;
     margin-bottom: 0!important;
+    margin-top: 16px!important
+}
+.logo{
+  width: 170px!important;
 }
 .galley-header{
   margin-top: 10px;
@@ -1361,6 +1366,7 @@ p{
 .logo-title{
   margin-left: 250px;
   margin-bottom: 50px;
+  margin-top: 0;
 }
 .galley-header{
   margin-top: 10px;
