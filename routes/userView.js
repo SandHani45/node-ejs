@@ -45,7 +45,7 @@ router.get('/our-inspirations', function(req, res) {
 });
 
 // join-us
-router.get('/join-us', function(req, res) {
+router.get('/make-a-difference', function(req, res) {
   res.render('pages/join-us',{layout:'layoutUser'});
 });
 
