@@ -1383,3 +1383,8 @@ p{
     max-width: 1140px;
 }
 }
+.card-body{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

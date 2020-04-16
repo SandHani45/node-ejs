@@ -21,12 +21,12 @@ router.post('/admin-login', function(req, res, next){
 });
 
 // Register Form
-router.get('/register', function(req, res){
+router.get('/register-osgan-memeber', function(req, res){
   res.render('admin/register', {layout:'layoutAdmin'});
 });
 
 // Register Proccess
-router.post('/register', function(req, res){
+router.post('/register-osgan-memeber', function(req, res){
   const name = req.body.name;
   const email = req.body.email;
   const username = req.body.username;

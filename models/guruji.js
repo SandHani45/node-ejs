@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
 
-// Article Schema
+// Guruji Schema
 let gurujiSchema = mongoose.Schema({
   title:{
     type: String,

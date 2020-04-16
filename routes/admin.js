@@ -3,19 +3,47 @@ const router = express.Router();
 const app = express();
 const path = require('path');
 const multer = require('multer');
-const upload = multer({dest: __dirname + '/uploads/images'});
 // Guruji Model
 let Guruji = require('../models/guruji');
+let Event = require('../models/event');
 app.use(express.static('public'));
+
+
+/** Storage Engine */
+const storageEngine = multer.diskStorage({
+  destination: './public/files',
+  filename: function(req, file, fn){
+    fn(null,  new Date().getTime().toString()+'-'+file.fieldname+path.extname(file.originalname));
+  }
+}); 
+const upload =  multer({
+  storage: storageEngine,
+  limits: { fileSize:900000 },
+  fileFilter: function(req, file, callback){
+    validateFile(file, callback);
+  }
+}).single('image');
+
+var validateFile = function(file, cb ){
+ var allowedFileTypes = /jpeg|jpg|JPG|png|PNG|gif/;
+  const extension = allowedFileTypes.test(path.extname(file.originalname).toLowerCase());
+  const mimeType  = allowedFileTypes.test(file.mimetype);
+  if(extension && mimeType){
+    return cb(null, true);
+  }else{
+    cb("Invalid file type. Only JPEG, PNG and GIF file are allowed.")
+  }
+}
+
 //Admin
 router.get('/admin', ensureAuthenticated, function(req, res) {
-  Guruji.find({}, function(err, guruji){
+  Event.find({}, function(err, event){
     if(err){
       console.log(err);
     } else {
       res.render('admin/index', {
-        title:'Guru ji Vision',
-        guruji: guruji,
+        title:'Event',
+        event: event,
         layout:'layoutAdmin'
       });
     }
@@ -28,12 +56,41 @@ router.get('/admin/events', ensureAuthenticated, function(req, res) {
 });
 
 // Events
-router.post('/admin/events', upload.single('image'), function(req, res) {
-    if(req.file) {
-      res.json(req.file);
-  } else throw 'error';
-  // res.sendFile(path.join(__dirname, `./uploads/${req.body.image}`));
-  // res.render('admin/event', {layout:'layoutAdmin'});
+router.post('/admin/events', function(req, res) {
+  upload(req, res,(error) => {
+    if(error){
+      console.log(error)
+       res.redirect('/admin/error');
+    }else{
+      if(req.file == undefined){
+        
+        res.redirect('/admin/error');
+      }else{
+           
+          /**
+           * Create new record in mongoDB
+           */
+          var fullPath = "files/"+req.file.filename;
+          var document = {
+            image:     fullPath, 
+            title:   req.body.title,
+            description: req.body.description,
+            city: req.body.city
+          };
+          console.log(document)
+        var event = new Event(document); 
+        event.save(function(error){
+          if(error){ 
+            throw error;
+          } 
+          res.redirect('/admin');
+       });
+    }
+  }
+});
+});
+router.get('/admin/error', ensureAuthenticated, function(req, res) {
+  res.render('admin/error',{ layout:'layoutAdmin'});
 });
 
 
@@ -58,10 +115,10 @@ router.post('/admin-guru-ji-vision', function(req, res){
 
 // Load Edit Form
 router.get('/admin-guru-ji-vision/edit/:id', ensureAuthenticated, function(req, res){
-  Guruji.findById(req.params.id, function(err, guruji){
+  Event.findById(req.params.id, function(err, event){
     res.render('admin/edit-guru-ji-vision', {
-      title:'Edit Guruji Vision',
-      guruji:guruji,
+      title:'Edit the Event',
+      event:event,
       layout:'layoutAdmin'
     });
   });
@@ -69,14 +126,15 @@ router.get('/admin-guru-ji-vision/edit/:id', ensureAuthenticated, function(req, 
 
 // Update Submit POST Route
 router.post('/admin-guru-ji-vision/edit/:id', function(req, res){
-  let guruji = {};
-  guruji.title = req.body.title;
-  guruji.description = req.body.description;
-  guruji.youtube_link = req.body.youtube_link;
+  let event = {};
+  event.title = req.body.title;
+  event.city = req.body.city;
+  event.description = req.body.description;
+  event.image = req.body.image;
 
   let query = {_id:req.params.id}
 
-  Guruji.update(query, guruji, function(err){
+  Event.update(query, event, function(err){
     if(err){
       console.log(err);
       return;
@@ -91,10 +149,10 @@ router.get('/admin-guru-ji-vision/:id', function(req, res){
   if(!req.user._id){
     res.status(500).send();
   }
-  Guruji.findById(req.params.id)
-      .then(guruji => {
+  Event.findById(req.params.id)
+      .then(event => {
         // Delete
-        guruji.remove().then(() => res.redirect('/admin'));
+        event.remove().then(() => res.redirect('/admin'));
       })
       .catch(err => res.status(404));
 });

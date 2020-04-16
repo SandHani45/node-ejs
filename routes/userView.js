@@ -5,7 +5,7 @@ const { omit } = require("lodash");
 var nodemailer = require('nodemailer');
 // Guruji Model
 let Guruji = require('../models/guruji');
-
+let Event = require('./../models/event')
 // index page 
 router.get('/', function(req, res) {
   res.render('pages/index',{layout:'layoutUser'});
@@ -22,7 +22,13 @@ router.get('/what-is-on-our-cross-wire', function(req, res) {
 });
 // forth-coming-events
 router.get('/forth-coming-events', function(req, res) {
-  res.render('pages/forth-coming-events',{layout:'layoutUser'});
+  Event.find({}, function(err, event){
+    res.render('pages/forth-coming-events', {
+      title:'Events',
+      event:event,
+      layout:'layoutUser'
+    });
+  });
 });
 
 // Photo-gallery

@@ -61,6 +61,17 @@
   <section class="ftco-section ftco-gallery">
     <div class="container mb-3">
         <div class="row justify-content-md-center">
+          <% event.forEach(function(item){ %> 
+            <div class="col-md-10 mb-20">
+              <img src="<%= item.image %>" alt="Nature" style="width:100%;">
+              <div class="text-block-image">
+                <h4 class="galley-header"><%= item.title %></h4>
+                <p> <%= item.city %></p>
+                <p> <%= item.description %></p>
+              </div>
+            </div>
+            <% }); %>
+
           <div class="col-md-10 mb-20">
             <img src="images/g1.JPG" alt="Nature" style="width:100%;">
             <div class="text-block-image">
